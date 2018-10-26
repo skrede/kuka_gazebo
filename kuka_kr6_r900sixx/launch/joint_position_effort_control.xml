@@ -1,0 +1,10 @@
+<launch>
+  <param name="robot_description" command="$(find xacro)/xacro '$(find kuka_gazebo)/kuka_kr6_r900sixx/urdf/joint_position_effort_control/kuka_kr6r900sixx.xacro'" />
+  <!-- load the joint state controller -->
+  <rosparam file="$(find kuka_gazebo)/kuka_kr6_r900sixx/config/joint_position_effort_control/joint_state_controller.yaml" command="load" />
+  <node name="joint_state_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn joint_state_controller" />
+ 
+  <rosparam file="$(find kuka_gazebo)/kuka_kr6_r900sixx/config/joint_position_effort_control/position_controllers.yaml" command="load"/>
+  <node name="controller_spawner" pkg ="controller_manager" type="spawner" args="joint_a1_position_controller joint_a2_position_controller joint_a3_position_controller joint_a4_position_controller joint_a5_position_controller joint_a6_position_controller"/>
+  
+</launch>

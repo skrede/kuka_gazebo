@@ -8,7 +8,7 @@
     <arg name="paused" value="$(arg paused)"/>
   </include>
 
-  <include file="$(find kuka_gazebo)/kuka_kr6_r900sixx/launch/gazebo_load.launch"/>
+  <include file="$(find kuka_gazebo)/kuka_kr6_r900sixx/launch/gazebo_load_joint_position_control.xml"/>
 
   <node name="kr6r900sixx_loader" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model kuka_kr6r900sixx" />
 
@@ -16,6 +16,6 @@
   output="screen">
   </node>
 
-  <include file="$(find kuka_gazebo)/kuka_kr6_r900sixx/launch/joint_position_control.launch"/>
+  <include file="$(find kuka_gazebo)/kuka_kr6_r900sixx/launch/joint_position_effort_control.xml"/>
 
 </launch>

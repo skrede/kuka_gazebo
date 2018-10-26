@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <robot name="kuka_kr6r900sixx" 
   xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <xacro:include filename="$(find kuka_gazebo)/kuka_kr6_r900sixx/urdf/kuka_kr6r900sixx_macro.xacro"/>
+  <xacro:include filename="$(find kuka_gazebo)/kuka_kr6_r900sixx/urdf/joint_position_effort_control/kuka_kr6r900sixx_macro.xacro"/>
   <xacro:kuka_kr6r900sixx_gazebo prefix=""/>
 
   <link name="world"/>
